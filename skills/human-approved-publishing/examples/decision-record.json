@@ -1,0 +1,20 @@
+{
+  "artifact_id": "release-note-2026-07",
+  "revision": "sha256:synthetic-example",
+  "destination": "public project changelog",
+  "state": "ready_for_review",
+  "checks": [
+    {
+      "name": "links",
+      "status": "passed"
+    },
+    {
+      "name": "private-data scan",
+      "status": "passed"
+    }
+  ],
+  "blocking_findings": [],
+  "pending_action": "Publish the reviewed release note to the public project changelog.",
+  "approval": null,
+  "publication": null
+}

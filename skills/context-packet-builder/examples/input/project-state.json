@@ -1,0 +1,43 @@
+{
+  "objective": "Publish a validated public data correction without bypassing human review.",
+  "decisions": [
+    "The public repository is the source of truth for approved records.",
+    "External publication requires explicit human approval."
+  ],
+  "items": [
+    {
+      "id": "TASK-103",
+      "summary": "Verify the private importer rejects an unapproved commit.",
+      "status": "blocked",
+      "priority": "critical",
+      "due": "2026-07-18"
+    },
+    {
+      "id": "TASK-101",
+      "summary": "Review the correction pull request.",
+      "status": "ready",
+      "priority": "high",
+      "due": "2026-07-17"
+    },
+    {
+      "id": "TASK-102",
+      "summary": "Update the public record after approval.",
+      "status": "pending",
+      "priority": "medium"
+    },
+    {
+      "id": "TASK-099",
+      "summary": "Draft the correction.",
+      "status": "completed",
+      "priority": "high"
+    }
+  ],
+  "risks": [
+    "Running both import and export workflows could overwrite approved data."
+  ],
+  "counts": {
+    "approved": 0,
+    "blocked": 1,
+    "ready": 1
+  }
+}

@@ -1,0 +1,33 @@
+name: Validate skills
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-skills-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Validate skill packages
+        run: python3 scripts/validate_skills.py
+      - name: Run tests
+        run: python3 -m unittest discover -s tests
+      - name: Build example context packet
+        run: |
+          python3 skills/context-packet-builder/scripts/build_context_packet.py \
+            --input skills/context-packet-builder/examples/input/project-state.json \
+            --output /tmp/context-packet.md
+          diff -u skills/context-packet-builder/examples/expected-context-packet.md /tmp/context-packet.md

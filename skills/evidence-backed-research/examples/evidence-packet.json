@@ -1,0 +1,33 @@
+{
+  "question": "Did Acme replace Queue A with Queue B for background jobs?",
+  "as_of": "2026-07-01",
+  "claims": [
+    {
+      "claim": "Acme introduced Queue B for new background-job workloads.",
+      "confidence": "confirmed",
+      "temporal_status": "current",
+      "source": {
+        "title": "Scaling background work at Acme",
+        "url": "https://example.com/acme-engineering-queue-b",
+        "published": "2026-04-12",
+        "support": "The engineering post says new background jobs are routed through Queue B."
+      }
+    },
+    {
+      "claim": "Queue A is fully retired.",
+      "confidence": "inferred",
+      "temporal_status": "unknown",
+      "source": {
+        "title": "Scaling background work at Acme",
+        "url": "https://example.com/acme-engineering-queue-b",
+        "published": "2026-04-12",
+        "support": "The post describes migration progress but does not state that Queue A is fully retired."
+      }
+    }
+  ],
+  "conflicts": [],
+  "gaps": [
+    "No primary source confirms whether legacy Queue A workloads remain."
+  ],
+  "recommendation": "needs_more_evidence"
+}

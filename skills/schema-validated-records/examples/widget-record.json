@@ -1,0 +1,12 @@
+{
+  "id": "queue-b",
+  "tool": "Queue B",
+  "status": "current",
+  "confidence": "confirmed",
+  "evidence": [
+    {
+      "url": "https://example.com/acme-engineering-queue-b",
+      "support": "Acme states that new background jobs are routed through Queue B."
+    }
+  ]
+}
