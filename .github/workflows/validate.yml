@@ -25,6 +25,10 @@ jobs:
         run: python3 scripts/validate_skills.py
       - name: Run tests
         run: python3 -m unittest discover -s tests
+      - name: Check ticket approval example trace
+        run: |
+          python3 examples/action-approval/demo.py > /tmp/action-approval-trace.json
+          diff -u examples/action-approval/expected-trace.json /tmp/action-approval-trace.json
       - name: Build example context packet
         run: |
           python3 skills/context-packet-builder/scripts/build_context_packet.py \
