@@ -52,6 +52,19 @@ python3 skills/context-packet-builder/scripts/build_context_packet.py \
 
 CI runs the same checks on every pull request.
 
+## Executable example
+
+The [ticket approval example](examples/action-approval/README.md) checks whether a
+proposed change has approval for its exact contents before writing to a synthetic
+ticket. It includes version checks, replay handling, an audit trail, and tests for
+rejected actions and interrupted execution. Run it locally with:
+
+```bash
+python3 examples/action-approval/demo.py
+```
+
+The demo uses scripted approval and a local SQLite database. It makes no model calls.
+
 ## Design boundaries
 
 - Synthetic examples only.
